@@ -7,4 +7,3 @@ for filename in *; do
 		ffmpeg -i "$filename" -filter:v crop=220:240:1607:745 -c:a copy Crops/"$filename"
 	fi
 done
-
