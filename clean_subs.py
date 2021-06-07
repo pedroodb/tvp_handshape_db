@@ -13,5 +13,6 @@ for filename in os.listdir(dir):
           end = split[2] if len(split) > 2 else ''
         if (idx % 8 == 1) and begin and end and len(line[:-1]) > 0:
           lines.append(begin + ',' + end + ',"' + line[:-1] + '"\n')
-  with open('CleanSubs/' + filename, 'w', encoding='utf-8') as file:
-    file.write(''.join(lines))
+  if lines:
+    with open('CleanSubs/' + filename, 'w', encoding='utf-8') as file:
+      file.write(''.join(lines))
